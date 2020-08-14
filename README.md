@@ -6,7 +6,7 @@
 > :iphone: Basic bank account mobile app created for learning Flutter.
 
 <p align="center">
-  <img alt="Mobile demo gif" width="450px" src="https://media2.giphy.com/media/Jmli9rBQZNKs244alb/giphy.gif" />
+  <img alt="Mobile demo gif" width="450px" src="https://media1.giphy.com/media/lnhRZ59qGmkfE18b84/giphy.gif" />
 </p>
 
 ## Getting Started with Flutter
