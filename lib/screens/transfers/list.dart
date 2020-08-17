@@ -22,12 +22,15 @@ class TransferListState extends State<TransfersList> {
       appBar: AppBar(
         title: Text(_appBarTitle),
       ),
-      body: ListView.builder(
-        itemCount: widget._transfers.length,
-        itemBuilder: (context, index) {
-          final transfer = widget._transfers[index];
-          return TransferListItem(transfer, key: UniqueKey());
-        },
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView.builder(
+          itemCount: widget._transfers.length,
+          itemBuilder: (context, index) {
+            final transfer = widget._transfers[index];
+            return TransferListItem(transfer, key: UniqueKey());
+          },
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
@@ -70,8 +73,15 @@ class TransferListItem extends StatelessWidget {
     return Card(
       child: ListTile(
         leading: Icon(Icons.monetization_on),
-        title: Text(_formatMoney(_transfer.value)),
-        subtitle: Text(_formatAccount(_transfer.accountNumber)),
+        title: Padding(
+          padding: const EdgeInsets.only(bottom: 8.0),
+          child: Text(
+            _formatMoney(_transfer.value),
+          ),
+        ),
+        subtitle: Text(
+          _formatAccount(_transfer.accountNumber),
+        ),
       ),
     );
   }

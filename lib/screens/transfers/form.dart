@@ -30,28 +30,34 @@ class NewTransferFormState extends State<NewTransferForm> {
       appBar: AppBar(
         title: Text(_appBarTitle),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            CustomTextField(
-              controller: _accNumberField,
-              label: _accountLabel,
-              hint: _accountHint,
-            ),
-            CustomTextField(
-              controller: _valueField,
-              label: _valueLabel,
-              hint: _valueHint,
-              icon: Icons.monetization_on,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 16.0),
-              child: RaisedButton(
-                child: Text(_confirmButtonText),
-                onPressed: () => _createTransfer(context),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              CustomTextField(
+                controller: _accNumberField,
+                label: _accountLabel,
+                hint: _accountHint,
               ),
-            ),
-          ],
+              CustomTextField(
+                controller: _valueField,
+                label: _valueLabel,
+                hint: _valueHint,
+                icon: Icons.monetization_on,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 16.0),
+                child: SizedBox(
+                  width: double.maxFinite,
+                  child: RaisedButton(
+                    child: Text(_confirmButtonText),
+                    onPressed: () => _createTransfer(context),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
