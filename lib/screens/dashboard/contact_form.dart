@@ -50,7 +50,7 @@ class _ContactFormState extends State<ContactForm> {
                       final String name = _fullNameField.text;
                       final int account = int.tryParse(_accountField.text);
 
-                      final Contact newContact = Contact(name, account);
+                      final Contact newContact = Contact(0, name, account);
 
                       Navigator.pop(context, newContact);
                     },
