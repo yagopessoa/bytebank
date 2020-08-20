@@ -1,4 +1,5 @@
 import 'package:bytebank/components/custom_text_field.dart';
+import 'package:bytebank/database/dao/contact_dao.dart';
 import 'package:bytebank/models/contact.dart';
 import 'package:flutter/material.dart';
 
@@ -18,6 +19,7 @@ class ContactForm extends StatefulWidget {
 class _ContactFormState extends State<ContactForm> {
   final TextEditingController _fullNameField = TextEditingController();
   final TextEditingController _accountField = TextEditingController();
+  final ContactDao _dao = ContactDao();
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +54,9 @@ class _ContactFormState extends State<ContactForm> {
 
                       final Contact newContact = Contact(0, name, account);
 
-                      Navigator.pop(context, newContact);
+                      _dao
+                          .save(newContact)
+                          .then((id) => Navigator.pop(context));
                     },
                   ),
                 ),
