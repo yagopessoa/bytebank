@@ -1,6 +1,6 @@
 import 'package:bytebank/database/dao/contact_dao.dart';
 import 'package:bytebank/models/contact.dart';
-import 'package:bytebank/screens/dashboard/contact_form.dart';
+import 'package:bytebank/screens/contact_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -16,7 +16,7 @@ class _ContactsState extends State<Contacts> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Contatos'),
+        title: Text('Transferências'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
