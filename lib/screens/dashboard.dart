@@ -23,7 +23,7 @@ class Dashboard extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
                   _FeatureItem(
-                    'Transferências',
+                    'Transfererir',
                     Icons.monetization_on,
                     onTap: () => _showContacts(context),
                   ),
