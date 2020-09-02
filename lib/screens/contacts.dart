@@ -1,3 +1,4 @@
+import 'package:bytebank/components/loading.dart';
 import 'package:bytebank/database/dao/contact_dao.dart';
 import 'package:bytebank/models/contact.dart';
 import 'package:bytebank/screens/contact_form.dart';
@@ -24,15 +25,8 @@ class _ContactsState extends State<Contacts> {
           future: _dao.findAll(),
           builder: (context, snapshot) {
             switch (snapshot.connectionState) {
-              case ConnectionState.none:
-                break;
               case ConnectionState.waiting:
-                return Center(
-                  child: CircularProgressIndicator(),
-                );
-                break;
-              case ConnectionState.active:
-                break;
+                return Loading();
               case ConnectionState.done:
                 final List<Contact> contacts = snapshot.data;
                 return ListView.builder(
@@ -42,9 +36,10 @@ class _ContactsState extends State<Contacts> {
                   },
                   itemCount: contacts.length,
                 );
+              default:
                 break;
             }
-            return Center(child: Text('Erro!'));
+            return Center(child: Text('Não foi possível carregar a lista.'));
           },
         ),
       ),
