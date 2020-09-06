@@ -5,6 +5,12 @@
 
 > :iphone: Basic bank account mobile app created for learning Flutter.
 
+## Web API
+
+In order to test this app locally, you'll need to run an API server that can be found on [this repository](https://github.com/yagopessoa/bytebank-api).
+
+Also, you'll need to change the `_apiDomain` constant on `lib/api/clients/transaction_client.dart`.
+
 ## Getting Started with Flutter
 
 This project was created using Flutter.

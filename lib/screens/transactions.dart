@@ -1,4 +1,4 @@
-import 'package:bytebank/api/client.dart';
+import 'package:bytebank/api/clients/transaction_client.dart';
 import 'package:bytebank/components/loading.dart';
 import 'package:bytebank/models/contact.dart';
 import 'package:bytebank/models/transaction.dart';
@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 class Transactions extends StatelessWidget {
   final List<Transaction> transactions = List();
+  final TransactionClient _client = TransactionClient();
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class Transactions extends StatelessWidget {
         title: Text('Histórico'),
       ),
       body: FutureBuilder<List<Transaction>>(
-          future: findAll(),
+          future: _client.findAll(),
           builder: (context, snapshot) {
             switch (snapshot.connectionState) {
               case ConnectionState.waiting:
